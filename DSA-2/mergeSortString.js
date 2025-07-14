@@ -4,8 +4,8 @@ function mergeSortString(str){
 
     let middle = Math.floor(str.length / 2);
 
-    let left = str.slice(0,middle);
-    let right = str.slice(middle);
+    let left = mergeSortString( str.slice(0,middle) );
+    let right = mergeSortString( str.slice(middle) );
 
     return merge(left, right);
 }
