@@ -7,7 +7,7 @@ class HashTable{
     hash(key){
         let total = 0;
 
-        for(let i = 0; i < this.table.length; i++){
+        for(let i = 0; i < key.length; i++){
             
             total += key.charCodeAt(i);
         }
