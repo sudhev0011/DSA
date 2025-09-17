@@ -316,7 +316,7 @@ class BST {
 
       if(count === k){
 
-        result = count;
+        result = node.value;
         return;
       }
 
