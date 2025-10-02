@@ -46,7 +46,7 @@ class BST {
     if (root.value == value) {
       return true;
     } else if (root.value < value) {
-      return this.search(root.left, value);
+      return this.search(root.left, value);// always remember to use 'this' keyword when using the methods inside
     } else {
       return this.search(root.right, value);
     }
