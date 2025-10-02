@@ -140,7 +140,7 @@ class BST {
       root.right = this.deleteNode(root.right, root.value);
     }
 
-    return root;
+    return root; // always remember to return the root 
   }
 
   isValidBst() {
