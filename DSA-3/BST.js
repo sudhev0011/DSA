@@ -328,6 +328,14 @@ class BST {
 
     return result;
   }
+
+  createSortArray(root, result){
+    if(!root) return;
+
+    this.createSortArray(root.left, result);
+    result.push(root.value);
+    this.createSortArray(root.right, result);
+  }
 }
 
 const bst = new BST();
@@ -343,12 +351,12 @@ bst.insert(2);
 
 // console.log(bst.search(bst.root, 1));
 // console.log(bst.isValidBst());
-console.log('preOrder');
-bst.preOrder(bst.root);
+// console.log('preOrder');
+// bst.preOrder(bst.root);
 
-bst.delete(5);
-console.log('preOrder');
-bst.preOrder(bst.root);
+// bst.delete(5);
+// console.log('preOrder');
+// bst.preOrder(bst.root);
 // console.log('inOrder');
 // bst.inOrder(bst.root);
 // console.log('postOrder');
@@ -359,3 +367,6 @@ bst.preOrder(bst.root);
 // console.log(bst.secondSmallest());
 // console.log(bst.heightOfNode(bst.root.left.left.left));
 // console.log(bst.KthSmallest(3));
+let result = [];
+bst.createSortArray(bst.root, result);
+console.log(result);

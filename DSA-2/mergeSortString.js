@@ -4,10 +4,10 @@ function mergeSortString(str){
 
     let middle = Math.floor(str.length / 2);
 
-    let left = mergeSortString( str.slice(0,middle) );
-    let right = mergeSortString( str.slice(middle) );
+    let left =  str.slice(0,middle);
+    let right =  str.slice(middle);
 
-    return merge(left, right);
+    return merge(mergeSortString(left), mergeSortString(right));
 }
 
 
@@ -18,14 +18,12 @@ function merge(left, right){
 
     while(i < left.length && j < right.length){
 
-        if(left.charCodeAt(i) <= right.charCodeAt(j)){
+        if(left[i] <= right[j]){
 
-            result += left[i];
-            i++;
+            result += left[i++];
         }else{
 
-            result += right[j];
-            j++;
+            result += right[j++];
         }
     }
 
