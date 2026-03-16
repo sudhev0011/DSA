@@ -265,7 +265,7 @@ class LinkedList {
       let curr = this.head;
       let listValues = "";
       while (curr) {
-        listValues += curr.value + " ";
+        listValues += curr.value + "->";
         curr = curr.next;
       }
 
@@ -284,15 +284,15 @@ list.append(9);
 list.append(7);
 list.insert(8, 2);
 // list.removeFrom(3);
-list.print();
+// list.print();
 // list.removeNthLastElement(3);
 // list.removeNthElement(5);
-list.removeValue(7)
+// list.removeValue(7)
 list.print();
 // list.largestValue();
 // console.log(list.search(50))
-// list.reverse();
-// list.print();
+list.reverse();
+list.print();
 // list.middle();
 // list.removeMiddle();
 // list.print();

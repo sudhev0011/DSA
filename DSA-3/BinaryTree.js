@@ -41,7 +41,7 @@ class BinaryTree{
             queue.push(curr.right);
         }
     }
-}
+    }
 
    inOrderTraversal(node = this.root){
     if(node!==null){
