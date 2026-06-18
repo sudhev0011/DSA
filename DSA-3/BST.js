@@ -46,7 +46,7 @@ class BST {
     if (root.value == value) {
       return true;
     } else if (root.value < value) {
-      return this.search(root.left, value);// always remember to use 'this' keyword when using the methods inside
+      return this.search(root.left, value); // always remember to use 'this' keyword when using the methods inside
     } else {
       return this.search(root.right, value);
     }
@@ -140,7 +140,7 @@ class BST {
       root.right = this.deleteNode(root.right, root.value);
     }
 
-    return root; // always remember to return the root 
+    return root; // always remember to return the root
   }
 
   isValidBst() {
@@ -170,9 +170,9 @@ class BST {
     let rightHeight = this.balanced(root.right);
     if (rightHeight === -1) return -1;
 
-    if(Math.abs(leftHeight - rightHeight) > 1) return -1;
+    if (Math.abs(leftHeight - rightHeight) > 1) return -1;
 
-    return Math.max(leftHeight,rightHeight) + 1;
+    return Math.max(leftHeight, rightHeight) + 1;
   }
 
   maxDepth(root) {
@@ -301,27 +301,23 @@ class BST {
     return Math.max(leftHeight, rightHeight) + 1;
   }
 
-  KthSmallest(k){
-
+  KthSmallest(k) {
     let count = 0;
     let result = null;
 
-    function inOrder(node){
-
-      if(!node || result !== null) return;
+    function inOrder(node) {
+      if (!node || result !== null) return;
 
       inOrder(node.left);
 
       count++;
 
-      if(count === k){
-
+      if (count === k) {
         result = node.value;
         return;
       }
 
       inOrder(node.right);
-
     }
 
     inOrder(this.root);
@@ -329,12 +325,33 @@ class BST {
     return result;
   }
 
-  createSortArray(root, result){
-    if(!root) return;
+  createSortArray(root, result) {
+    if (!root) return;
 
     this.createSortArray(root.left, result);
     result.push(root.value);
     this.createSortArray(root.right, result);
+  }
+
+  getDept(value) {
+    let current = this.root;
+    let dept = 0;
+
+    while (current) {
+      if (current.value === value) {
+        return dept;
+      }
+
+      if (value < current.value) {
+        current = current.left;
+      } else {
+        current = current.right;
+      }
+
+      dept++;
+    }
+
+    return -1;
   }
 }
 

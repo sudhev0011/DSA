@@ -101,12 +101,23 @@ const gph = new Graph();
 gph.insertVertex('A');
 gph.insertVertex('B');
 gph.insertVertex('C');
+gph.insertVertex('D');
+gph.insertVertex('E');
+gph.insertVertex('F');
 
 gph.addEdge('A','B')
-console.log(gph.hasEdge('A', 'B'));
+gph.addEdge('A', 'B');
+gph.addEdge('A', 'f');
+gph.addEdge('B', 'E');
+gph.addEdge('D', 'A');
+gph.addEdge('C', 'E');
+gph.addEdge('C', 'F');
+// console.log(gph.hasEdge('A', 'B'));
 
-gph.removeEdge('A', 'B');
+// gph.removeEdge('A', 'B');
 
-gph.removeVertex('B');
-gph.display();
+// gph.removeVertex('B');
+// gph.display();
 
+// gph.bfs('A');
+gph.dfs("A")

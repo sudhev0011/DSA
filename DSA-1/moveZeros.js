@@ -34,7 +34,7 @@ function moveZerosToleft(arr){
 
 
 
-let arr = [0,0,5, 6, 0, 3, 0, 0, 2, 0, 9, 0, 1];
+let arr = [2, 0, 5, 6, 0, 0, 1, 0, 4, 0];
 
-// console.log(MoveZeros(arr))
+console.log(MoveZeros(arr))
 console.log(moveZerosToleft(arr))
