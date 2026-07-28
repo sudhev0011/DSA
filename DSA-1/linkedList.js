@@ -272,6 +272,53 @@ class LinkedList {
       console.log(listValues);
     }
   }
+
+  moveEvenNodesToEnd(head=this.head){
+
+    let position = 1;
+
+    let evenHead = null, evenTail = null;
+
+    let oddHead = null, oddTail = null
+
+    let current = head;
+
+    while(current){
+
+      let nextNode = current.next;
+
+      current.next = null;
+
+      if(position % 2 == 1){
+
+        if(!oddHead){
+          oddHead = current;
+          oddTail = current;
+        }else{
+          oddTail.next = current;
+          oddTail = current;
+        }
+      }else{
+
+        if(!evenHead){
+          evenHead = current;
+          evenTail = current;
+        }else{
+          evenTail.next = current;
+          evenTail = current;
+        }
+      }
+
+      current = nextNode;
+      position++;
+    }
+
+    if(oddTail){
+      oddTail.next = evenHead;
+    }
+
+    return oddHead || evenHead;
+  }
 }
 
 const list = new LinkedList();
